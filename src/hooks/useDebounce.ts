@@ -7,9 +7,13 @@ export const useDebounce = (callback: any, delay: number) => {
 		if (timer.current) {
 			clearTimeout(timer.current)
 		}
-		timer.current = setTimeout(() => {
+		if (delay === 0) {
 			callback(str)
-		}, delay)
+		} else {
+			timer.current = setTimeout(() => {
+				callback(str)
+			}, delay)
+		}
 	}, [callback, delay])
 	return debounceCallback
 }

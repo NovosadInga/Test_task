@@ -6,7 +6,7 @@ interface ISearchProps {
 export const Search: React.FC<ISearchProps> = ({ search, callback }) => {
 	return (
 		<input
-			className='rounded-lg h-[50px] px-4 border-solid border-slate-400 border'
+			className='rounded-lg h-[50px] px-4 border-solid border-slate-400 border w-full md:w-[400px]'
 			type='text'
 			placeholder='Search by username'
 			value={search}

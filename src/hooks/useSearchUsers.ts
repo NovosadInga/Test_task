@@ -8,6 +8,10 @@ export const useSearchUsers = (search: string, users: IUser[]) => {
 		setDebounced(search)
 	}
 	const debouncedSearch = useDebounce(searchFetch, 500);
+	const debouncedFirstSearch = useDebounce(searchFetch, 0);
+	useEffect(() => {
+		debouncedFirstSearch(search)
+	}, [])
 	useEffect(() => {
 		debouncedSearch(search)
 	}, [search, debouncedSearch])

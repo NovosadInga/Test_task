@@ -1,6 +1,6 @@
 import React from 'react';
 import { PostsContainer } from '../components/containers/PostsContainer';
-import { PageLayout } from './PageLayout'
+import { PageLayout } from '../layouts/PageLayout'
 export const Posts = () => {
 	return (
 		<PageLayout

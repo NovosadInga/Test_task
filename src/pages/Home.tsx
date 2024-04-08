@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageLayout } from './PageLayout';
+import { PageLayout } from '../layouts/PageLayout';
 import { HomeContainer } from '../components/containers/HomeContainer';
 
 export const Home = () => {

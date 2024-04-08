@@ -11,7 +11,12 @@ export const Button: React.FC<IButton> = ({
 	children
 }) => {
 	return (
-		<Link className='bg-slate-700 text-white font-bold rounded-lg h-[50px] min-w-[150px] p-2 border border-solid border-slate-700 inline-flex justify-center items-center hover:bg-slate-600 transition-colors' to={url}>{children}</Link>
+		<Link
+			className='bg-slate-700 text-white font-bold rounded-lg h-[50px] min-w-[140px] p-2 border border-solid border-slate-700 inline-flex justify-center items-center hover:bg-slate-600 transition-colors'
+			to={url}
+		>
+			{children}
+		</Link>
 	)
 }
 

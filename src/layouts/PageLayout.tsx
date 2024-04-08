@@ -14,7 +14,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({
 	children
 }) => {
 	return (
-		<>
+		<div>
 			<Helmet>
 				<meta name="description" content={pageDescription} />
 				<title>{pageTitle}</title>
@@ -23,7 +23,7 @@ export const PageLayout: React.FC<IPageLayoutProps> = ({
 				<Title>{title}</Title>
 				{children}
 			</div>
-		</>
+		</div>
 
 	)
 }

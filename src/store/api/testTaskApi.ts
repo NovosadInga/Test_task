@@ -2,10 +2,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { IUser } from '../../models/IUser'
 import { IPost } from '../../models/IPost'
 import { IAlbum } from '../../models/IAlbum'
+import { API_URL } from '../../constants'
 
 export const testTaskApi = createApi({
 	reducerPath: 'testTaskApi',
-	baseQuery: fetchBaseQuery({ baseUrl: 'https://jsonplaceholder.typicode.com/' }),
+	baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
 	endpoints: (builder) => ({
 		getUsers: builder.query<IUser[], void>({
 			query: () => `/users`,

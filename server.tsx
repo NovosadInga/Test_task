@@ -1,4 +1,3 @@
-// server/index.js
 import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -6,22 +5,21 @@ import { HelmetProvider } from 'react-helmet-async';
 import path from 'path'
 import fs from 'fs'
 import App from './src/App.tsx';
-import { Home } from './src/pages/Home.tsx';
 import { StaticRouter } from "react-router-dom/server";
+
+
 const PORT = process.env.PORT || 8080;
 const server = express();
-server.use(express.static('./build', { index: false }));
 const html = fs.readFileSync(path.resolve(__dirname, 'build', 'index.html'), 'utf8');
-
-// Функція, яка генерує відповідь сервера
 const generateResponse = (content, helmet) => {
-	// Підставляємо контент у шаблон index.html
 	const responseHtml = html
 		.replace('<div id="root"></div>', `<div id="root">${content}</div>`)
 		.replace('</head>', `${helmet.title.toString()}${helmet.meta.toString()}</head>`);
 
 	return responseHtml;
 };
+
+server.use(express.static('./build', { index: false }));
 server.get('/*', (req, res) => {
 	const helmetContext = {};
 	const app = (
@@ -34,20 +32,6 @@ server.get('/*', (req, res) => {
 
 	const content = ReactDOMServer.renderToString(app);
 	const { helmet } = helmetContext;
-
-	// const html = `
-
-	//   <!DOCTYPE html>
-	//   <html lang="en">
-	//     <head>
-	//       ${helmet.title.toString()}
-	//       ${helmet.meta.toString()}
-	//     </head>
-	//     <body>
-	//       <div id="root">${content}</div>
-	//     </body>
-	//   </html>
-	// `;
 	const responseHtml = generateResponse(content, helmet);
 	res.send(responseHtml);
 });

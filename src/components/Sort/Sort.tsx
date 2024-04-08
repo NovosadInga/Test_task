@@ -1,6 +1,8 @@
 import React from 'react'
+
+import { TSort } from '../containers/HomeContent'
 import { SortElement } from './SortElement'
-import { TSort } from './containers/HomeContent'
+
 
 interface ISortProps {
 	sortOrder: TSort,
