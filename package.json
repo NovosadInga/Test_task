@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "serve": "npx nodemon --exec \"babel-node\" --extensions \".tsx,.ts\" server.tsx"
+    "serve": "npx nodemon --exec \"babel-node\" --extensions \".tsx,.ts\" server.tsx",
+    "start serve": "npm run build && npm run serve"
   },
   "eslintConfig": {
     "extends": [
