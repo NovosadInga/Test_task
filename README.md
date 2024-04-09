@@ -1,28 +1,28 @@
-# TESTTASK
+# TEST_TASK
+## Посилання на додаток
+[https://sheltered-tundra-34299-7ee08912deba.herokuapp.com/](https://sheltered-tundra-34299-7ee08912deba.herokuapp.com/)
+
 
 ## Використані технології
 - `React`
 - `React Router`
 - `Typescript`
-- `Redux Toolkit`
-- `sass`
-- `Formik`
-- `Yup`
-- `react-scroll`
-- `react-tooltip`
-- `axios`
+- `Redux Toolkit, RTK Query`
+- `tailwindcss`
+- `react-helmet-async`
+
 
 ## Структура проєкту
 
-![](https://github.com/NovosadInga/abz-test/blob/master/structure.png)
+![](https://github.com/NovosadInga/Test_task/blob/master/structure.png)
 
-- `api/` - звернення до сервера
-- `assets` - директорія для картинок, іконок і ін.
-- `components` - React-компоненти 
+- `components` - React-компоненти
 - `constants` - константи
-- `helpers` - допоміжні функції (валідація на клієнті, виведення помилок валідації сервера, обробка телефонного номера i ін.)
 - `hooks` - кастомні хуки
+- `layouts` - макети
 - `models` - моделі
-- `services` - перехоплювач та функції для роботит з токеном
-- `store` - сховище Redux, thunks
-- `styles` - стилі
+- `pages` - сторінки додатку
+- `routes` - роути
+- `store` - сховище Redux, запити до api
+
+
